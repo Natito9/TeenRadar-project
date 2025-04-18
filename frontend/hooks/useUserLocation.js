@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function useUserLocation() {
+export function useUserLocation() {
   const [location, setLocation] = useState(null);
   const [error, setError] = useState(null);
 
@@ -26,4 +26,4 @@ function useUserLocation() {
   return { location, error };
 }
 
-export default useUserLocation;
+

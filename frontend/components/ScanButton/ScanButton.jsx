@@ -12,6 +12,7 @@ function ScanButton({ onScan, disabled = false }) {
 
   return (
     <button
+    title="Click to scan nearby schools"
       onClick={handleClick}
       aria-label="Scan for nearby schools"
       disabled={disabled}

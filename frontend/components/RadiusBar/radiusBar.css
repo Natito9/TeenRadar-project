@@ -1,0 +1,38 @@
+.radius-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  height:auto;
+}
+.radius-display {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.radius-slider[type="range"] {
+  -webkit-appearance: none; 
+  width: 70%; 
+  max-width:400px;
+  height: 0.7rem;
+  background: #ec3a26; 
+  outline: none; 
+  transition: background 0.3s ease; 
+}
+.radius-slider[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 40px;
+  border: #ec3a26 2px solid; 
+  background: #ffffff; 
+  cursor: pointer; 
+  transition: background 0.3s ease;
+}
+.radius-slider[type="range"]:focus-visible {
+  outline: 6px solid #1245ea;
+  outline-offset: 2px;
+}   

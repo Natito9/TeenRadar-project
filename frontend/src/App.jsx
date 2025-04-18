@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect, useState } from "react";
-import useUserLocation from '../hooks/getUserLocation.js';
-import RadiusBar from '../components/RadiusBar.jsx';
+import {useUserLocation} from '../hooks/useUserLocation.js';
+import RadiusBar from '../components/RadiusBar/RadiusBar.jsx';
 import { updateRadius } from './api/updateRadius.js';
 import { scanLocation } from './api/scanLocation.js';
 import { getRadius } from './api/getRadius.js';
@@ -80,8 +80,10 @@ function App() {
 
   return (
     <>
+      <header>
       <h1>Teen Radar</h1>
       <p>Ever wonder what are your chances of meeting a teenager? Now you can!</p>
+      </header>
       <RadiusBar defaultRadius={radius} onChangeRadius={handleRadiusChange} />
       <ScanButton onScan={handleClick} />
 
@@ -89,6 +91,7 @@ function App() {
         <div>
           {location ? (
             <>
+          
               <h2>Teenager density Level: {densityLevel}</h2>
               <p>{levelMessage}</p>
               <section aria-labelledby="school-list">

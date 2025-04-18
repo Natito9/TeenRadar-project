@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import "./radiusBar.css"; 
 function RadiusBar({ defaultRadius, onChangeRadius }) {
   const [radius, setRadius] = useState(defaultRadius);
 
@@ -17,9 +17,11 @@ function RadiusBar({ defaultRadius, onChangeRadius }) {
   };
 
   return (
-    <div>
-      <p>Radius: {radius} km</p>
+    <section className="radius-container">
+      <h2 className="radius-display">Radius: {radius} km</h2>
       <input
+      className="radius-slider"
+      aria-label="Radius slider"
         type="range"
         min="1"
         max="50"
@@ -28,7 +30,7 @@ function RadiusBar({ defaultRadius, onChangeRadius }) {
         onMouseUp={handleSliderRelease}
         onTouchEnd={handleSliderRelease}
       />
-    </div>
+    </section>
   );
 }
 

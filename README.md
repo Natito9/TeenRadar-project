@@ -60,7 +60,10 @@ Location data is **never stored**, ensuring strong privacy.
 
 This project includes basic SEO using meta tags like `title`, `description`, and `meta name="title"`.  
 These tags help search engines understand the app and display it better in search results.  
-Accessibility improvements include semantic elements and `aria-labels` for better screen reader support.
+Accessibility improvements include semantic elements use where they make sense: `main`,`header`, `section`, `button`,`input`,etc and `aria-labels` for better screen reader support.
+Headings `h1` to `h3` are in a logical order and only one `h1` for the title.
+ Strong contrast for readability—primary text uses #000000 on a #EBDFC6 background, achieving a 15.9:1 contrast ratio, far exceeding WCAG AA/AAA standards.
+ All interactive elements are accessible via keyboard. Focus states are clearly visible, and keyboard users can easily navigate through the interface, radius bar is fully keyboard-accessible and can be adjusted using the arrow keys. Text and interactive elements meet standards for readability and accessibility.
 
 ---
 
