@@ -52,7 +52,7 @@ Location data is **never stored**, ensuring strong privacy.
    - From the root folder: `npm run dev`  
 6. Open in your browser:  
    - Frontend: [http://localhost:5173](http://localhost:5173)  
-   - Backend API: [http://localhost:3001](http://localhost:3001)
+ 
 
 ---
 

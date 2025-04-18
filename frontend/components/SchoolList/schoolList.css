@@ -1,0 +1,38 @@
+.toggle-button-schools{
+    background-color: #f7ecd7;
+    color: black;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: #ec3a26 2px solid;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 1.5rem;
+    box-shadow: 2px 5px 0px #ec3a26;
+}
+.toggle-button-schools.open {
+    background-color: #eedbba;
+    transform: translateY(4px);
+    box-shadow: 1px 2px 0px #ec3a26;
+  }
+.toggle-button-schools:hover{
+    background-color: #eedbba;
+    transform: translateY(4px);
+    box-shadow: 1px 2px 0px #ec3a26;
+}
+.school-list {
+    margin-top: 1.5rem;
+  }
+  
+  .school-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .school-list li {
+ 
+    border-bottom:#ebaba4 1px solid;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.3rem;
+  }

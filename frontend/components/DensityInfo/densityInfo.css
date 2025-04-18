@@ -1,0 +1,38 @@
+.density-info-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    max-width: 590px;
+
+    height:auto;
+    border: #ebaba4 2px solid;
+  }
+
+
+.density-info {
+    padding: 0.5rem;
+    border-right: #ebaba4 2px solid;
+
+
+  }
+  .density-info h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000000;
+ 
+  }
+.density-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ec3a26;
+    margin: 0;
+
+  }
+
+  .level-message{
+    align-self: center;
+    justify-content: center;
+    margin: auto;
+    padding: 0.5rem;
+  }

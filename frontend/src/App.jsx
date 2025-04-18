@@ -1,13 +1,13 @@
-import './App.css';
+import "./App.css";
 import { useEffect, useState } from "react";
-import {useUserLocation} from '../hooks/useUserLocation.js';
-import RadiusBar from '../components/RadiusBar/RadiusBar.jsx';
-import { updateRadius } from './api/updateRadius.js';
-import { scanLocation } from './api/scanLocation.js';
-import { getRadius } from './api/getRadius.js';
-import ScanButton from '../components/ScanButton/ScanButton.jsx';
-
-
+import { useUserLocation } from "../hooks/useUserLocation.js";
+import RadiusBar from "../components/RadiusBar/RadiusBar.jsx";
+import { updateRadius } from "./api/updateRadius.js";
+import { scanLocation } from "./api/scanLocation.js";
+import { getRadius } from "./api/getRadius.js";
+import ScanButton from "../components/ScanButton/ScanButton.jsx";
+import DensityInfo from "../components/DensityInfo/DensityInfo.jsx";
+import SchoolList from "../components/SchoolList/SchoolList.jsx";
 
 function App() {
   const [buttonText, setButtonText] = useState("Scan area");
@@ -33,13 +33,18 @@ function App() {
   }, []);
 
   const handleRadiusChange = async (newRadius) => {
-    if (typeof newRadius !== 'number' || isNaN(newRadius) || newRadius < 1 || newRadius > 50) {
+    if (
+      typeof newRadius !== "number" ||
+      isNaN(newRadius) ||
+      newRadius < 1 ||
+      newRadius > 50
+    ) {
       console.warn("Invalid radius input");
       return;
     }
-  
+
     setRadius(newRadius);
-  
+
     try {
       const data = await updateRadius(newRadius);
       console.log("Radius updated:", data);
@@ -47,21 +52,20 @@ function App() {
       console.error(err.message);
     }
   };
-  
 
   const handleClick = async () => {
     setShowSchools(false);
     setButtonText("Scanning...");
-  
+
     window.gtag("event", "button_click", {
       text: buttonText,
     });
-  
+
     try {
       if (location) {
         const data = await scanLocation(location);
         console.log(data);
-  
+
         setNearbySchools(data.schoolNames);
         setDesnsityLevel(data.densityLevel);
         setLevelMessage(data.levelMessage);
@@ -71,7 +75,7 @@ function App() {
     } catch (err) {
       console.error("Error during scan:", err);
     }
-  
+
     setTimeout(() => {
       setButtonText("Scan area");
       setShowSchools(true);
@@ -81,8 +85,10 @@ function App() {
   return (
     <>
       <header>
-      <h1>Teen Radar</h1>
-      <p>Ever wonder what are your chances of meeting a teenager? Now you can!</p>
+        <h1>Teen Radar</h1>
+        <p>
+          Ever wonder what are your chances of meeting a teenager? Now you can!
+        </p>
       </header>
       <RadiusBar defaultRadius={radius} onChangeRadius={handleRadiusChange} />
       <ScanButton onScan={handleClick} />
@@ -91,17 +97,12 @@ function App() {
         <div>
           {location ? (
             <>
-          
-              <h2>Teenager density Level: {densityLevel}</h2>
-              <p>{levelMessage}</p>
-              <section aria-labelledby="school-list">
-              <h3>Nearby Schools: {nearbySchools.length}</h3>
-              <ul>
-                {nearbySchools.map((name, idx) => (
-                  <li key={idx}>{name}</li>
-                ))}
-              </ul>
-              </section>
+              <DensityInfo
+                densityLevel={densityLevel}
+                levelMessage={levelMessage}
+              />
+
+              <SchoolList schools={nearbySchools} />
             </>
           ) : error ? (
             <p>Error: {error}</p>
