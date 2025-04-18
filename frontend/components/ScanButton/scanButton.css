@@ -1,0 +1,28 @@
+.scan-button {
+    background-color: #f4efe6;
+    color: black;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: #ec3a26 2px solid;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 1.5rem;
+
+  }
+  
+  .scan-button:hover {
+    background-color: #f36d5e ;
+    border-color: #ce2513;
+  }
+  
+  .scan-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  .scan-button:focus-visible {
+  outline: 6px solid #1245ea;
+  outline-offset: 2px;
+}   

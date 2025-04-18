@@ -5,7 +5,7 @@ import RadiusBar from '../components/RadiusBar.jsx';
 import { updateRadius } from './api/updateRadius.js';
 import { scanLocation } from './api/scanLocation.js';
 import { getRadius } from './api/getRadius.js';
-import ScanButton from '../components/ScanButton.jsx';
+import ScanButton from '../components/ScanButton/ScanButton.jsx';
 
 
 

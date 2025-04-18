@@ -1,3 +1,4 @@
+import "./scanbutton.css"; 
 import { useState } from "react";
 
 function ScanButton({ onScan, disabled = false }) {
@@ -14,6 +15,7 @@ function ScanButton({ onScan, disabled = false }) {
       onClick={handleClick}
       aria-label="Scan for nearby schools"
       disabled={disabled}
+       className="scan-button"
     >
       {buttonText}
     </button>
