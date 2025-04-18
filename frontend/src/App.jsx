@@ -23,7 +23,6 @@ function App() {
       try {
         const data = await getRadius();
         setRadius(data.radius);
-        console.log("Initial radius:", data.radius);
       } catch (err) {
         console.error("Error fetching radius:", err.message);
       }
@@ -47,7 +46,7 @@ function App() {
 
     try {
       const data = await updateRadius(newRadius);
-      console.log("Radius updated:", data);
+   
     } catch (err) {
       console.error(err.message);
     }
@@ -64,7 +63,6 @@ function App() {
     try {
       if (location) {
         const data = await scanLocation(location);
-        console.log(data);
 
         setNearbySchools(data.schoolNames);
         setDesnsityLevel(data.densityLevel);
