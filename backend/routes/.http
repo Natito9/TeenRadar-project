@@ -1,11 +1,10 @@
-PUT http://localhost:3001/user/user:id/settings
-###
-GET http://localhost:3001/user/user:id/settings
-
 
 ###
-GET http://localhost:3001/schools/details
+GET http://localhost:3001/radiusSettings
+
+###
+PUT http://localhost:3001/radiusSettings
 
 
 ###
-GET http://localhost:3001/highschools/unitcodes
+POST http://localhost:3001/scan

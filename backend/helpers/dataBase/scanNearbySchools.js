@@ -41,10 +41,6 @@ export async function scanNearbySchools(userLat, userLong, radius = 2) {
       })
       .filter((school) => school.distance <= radius);
 
-    nearbySchools.forEach((school) => {
-      console.log(school.schoolName);
-    });
-
     return nearbySchools;
   } finally {
     await client.close();

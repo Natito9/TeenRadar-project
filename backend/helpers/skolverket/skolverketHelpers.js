@@ -35,7 +35,6 @@ export const getSchoolsCoordinates = async (unitCodes) => {
   if (!coords || !coords.latitude || !coords.longitude) {
     return null;
   }
-  // console.log(`Fetched coords for:(${unitCodes})`);
 
   return { coords };
 };

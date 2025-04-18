@@ -10,8 +10,6 @@ import { updateSchoolData } from "./helpers/dataBase/updateSchoolData.js";
 const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 
-
-
 async function run() {
   try {
     await client.connect();
@@ -36,6 +34,4 @@ app.get("/", (req, res) => {
 });
 
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  // console.log(`Server running on http://localhost:${PORT}`);
-});
+app.listen(PORT, () => {});
