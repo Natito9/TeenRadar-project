@@ -1,8 +1,10 @@
+const API_URL = import.meta.env.VITE_API_URL;
+
 export const scanLocation = async (location) => {
-    const res = await fetch("http://localhost:3001/scan", {
+    const res = await fetch(`${API_URL}/scan`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+      "Content-Type": "application/json",
       },
       body: JSON.stringify(location),
     });

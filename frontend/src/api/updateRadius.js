@@ -1,5 +1,6 @@
+const API_URL = import.meta.env.VITE_API_URL;
 export const updateRadius = async (newRadius) => {
-    const res = await fetch("http://localhost:3001/radiusSettings", {
+    const res = await fetch(`${API_URL}/radiusSettings`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
