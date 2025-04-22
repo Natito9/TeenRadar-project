@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './SchoolList.css';
+import './schoolList.css';
 
 function SchoolList({ schools }) {
   const [isOpen, setIsOpen] = useState(false);

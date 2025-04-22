@@ -1,5 +1,5 @@
 import React from "react";
-import "./DensityInfo.css"; 
+import "./densityInfo.css"; 
 
 function DensityInfo({ densityLevel, levelMessage }) {
   return (
