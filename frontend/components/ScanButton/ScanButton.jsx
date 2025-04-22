@@ -1,4 +1,4 @@
-import "./scanbutton.css"; 
+import "./scanButton.css"; 
 import { useState } from "react";
 
 function ScanButton({ onScan, disabled = false }) {
